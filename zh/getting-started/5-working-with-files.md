@@ -34,7 +34,7 @@ exports.default = function() {
     .pipe(dest('output/'));
 }
 ```
-<!-- ads -->
+
 
 `dest()` 接受一个输出目录作为参数，并且它还会产生一个[Node stream][node-streams-docs]，通常作为终止流（terminator stream）。当它接收到通过管道（pipeline）传输的文件时，它会将文件内容及文件属性写入到指定的目录中。gulp 还提供了 [`symlink()`][symlink-api-docs] 方法，其操作方式类似 `dest()`，但是创建的是链接而不是文件。
 
@@ -82,7 +82,6 @@ exports.default = function() {
     .pipe(dest('output/'));
 }
 ```
-<!-- ads -->
 
 ## 模式：流（streaming）、缓冲（buffered）和空（empty）
 

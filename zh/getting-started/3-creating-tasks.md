@@ -18,7 +18,7 @@ sidebar_label: 创建任务
 * **私有任务（Private tasks）**  被设计为在内部使用，通常作为 `series()` 或 `parallel()` 组合的组成部分。
 
 一个私有（private）类型的任务（task）在外观和行为上和其他任务（task）是一样的，但是不能够被用户直接调用。如需将一个任务（task）注册为公开（public）类型的，只需从 gulpfile 中导出（export）即可。
-<!-- ads -->
+
 
 ```js
 const { series } = require('gulp');
@@ -86,7 +86,7 @@ exports.build = parallel(javascript, css);
 ```
 
 当 `series()` 或 `parallel()` 被调用时，任务（tasks）被立即组合在一起。这就允许在组合中进行改变，而不需要在单个任务（task）中进行条件判断。
-<!-- ads -->
+
 
 ```js
 const { series } = require('gulp');
@@ -166,7 +166,7 @@ exports.build = series(
 ```
 
 当一个组合操作执行时，这个组合中的每一个任务每次被调用时都会被执行。例如，在两个不同的任务（task）之间调用的 `clean` 任务（task）将被执行两次，并且将导致不可预期的结果。因此，最好重构组合中的 `clean` 任务（task）。
-<!-- ads -->
+
 
 如果你有如下代码：
 

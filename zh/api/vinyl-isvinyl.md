@@ -22,7 +22,7 @@ const notAFile = {};
 Vinyl.isVinyl(file) === true;
 Vinyl.isVinyl(notAFile) === false;
 ```
-<!-- ads -->
+
 
 ## 原型(Signature)
 

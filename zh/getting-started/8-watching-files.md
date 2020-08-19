@@ -36,7 +36,7 @@ exports.default = function() {
   watch('src/*.js', series(clean, javascript));
 };
 ```
-<!-- ads -->
+
 
 ## 警告：避免同步任务
 
@@ -95,7 +95,7 @@ exports.default = function() {
   });
 };
 ```
-<!-- ads -->
+
 
 ## 延迟
 

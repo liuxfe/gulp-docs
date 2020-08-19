@@ -33,7 +33,7 @@ exports.build = series(javascript, css);
 series(...tasks)
 ```
 
-<!-- ads -->
+
 
 ### 参数(Parameters)
 
@@ -90,7 +90,6 @@ const javascript = series(clean, function(cb) {
 exports.build = parallel(css, javascript);
 ```
 
-<!-- ads -->
 
 应该重构为:
 ```js

@@ -42,7 +42,7 @@ file.extname === '.txt';
 file.extname = '.js';
 file.path === '/specs/foo.js';
 ```
-<!-- ads -->
+
 
 ## 原型(Signature)
 
@@ -85,7 +85,7 @@ const Vinyl = require('vinyl');
 const file = new Vinyl({ foo: 'bar' });
 file.foo === 'bar';
 ```
-<!-- ads -->
+
 
 <span id='vinyl-instance'></span>
 ## Vinyl 实例

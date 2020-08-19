@@ -27,7 +27,7 @@ exports.default = function() {
     .pipe(dest('output/'));
 }
 ```
-<!-- ads -->
+
 
 ## 是否需要插件？
 
@@ -82,7 +82,7 @@ exports.default = function() {
     .pipe(dest('output/'));
 }
 ```
-<!-- ads -->
+
 
 ## 内联插件（Inline plugins）
 

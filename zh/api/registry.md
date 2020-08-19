@@ -15,7 +15,7 @@ sidebar_label: registry()方法
 
 有关详细信息，请参考 [创建自定义注册表][creating-custom-registries] 。
 
-<!-- ads -->
+
 
 ## 用法(Usage)
 

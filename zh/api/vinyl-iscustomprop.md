@@ -19,7 +19,7 @@ const Vinyl = require('vinyl');
 Vinyl.isCustomProp('sourceMap') === true;
 Vinyl.isCustomProp('path') === false;
 ```
-<!-- ads -->
+
 
 ## 原型(Signature)
 

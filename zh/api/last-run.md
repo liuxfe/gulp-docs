@@ -28,7 +28,7 @@ exports.default = function() {
 };
 ```
 
-<!-- ads -->
+
 
 ## Signature
 

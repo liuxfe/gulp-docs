@@ -146,7 +146,7 @@ module.exports = { one, two, three, four, five };
   ]
 }
 ```
-<!-- ads -->
+
 
 ## 原型(Signature)
 

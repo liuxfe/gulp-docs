@@ -31,7 +31,7 @@ exports.copy = copy;
 src(globs, [options])
 ```
 
-<!-- ads -->
+
 
 ### 参数
 
@@ -91,7 +91,7 @@ __注意__:插件可能不支持流媒体内容。|
 | statCache | object | | 之前生成的 `fs.Stat` 缓存——避免了一些文件系统调用。<br>_此选项直接传递给 [node-glob][node-glob-external]._ |
 | symlinks | object | | 之前生成的符号链接缓存——避免了一些文件系统调用。<br>_此选项直接传递给 [node-glob][node-glob-external]._ |
 | nocomment | boolean | false | 当为 false 时，将 glob 开头的 # 字符视为注释。<br>_此选项直接传递给 [node-glob][node-glob-external]._ |
-<!-- ads -->
+
 
 ## Sourcemaps
 

@@ -25,7 +25,7 @@ glob 是由普通字符和(或)通配字符组成的字符串，用于匹配文�
 ```js
 const invalidGlob = path.join(__dirname, 'src/*.js');
 ```
-<!-- ads -->
+
 
 ## 特殊字符： * (一个星号)
 
@@ -69,7 +69,6 @@ const invalidGlob = path.join(__dirname, 'src/*.js');
 ```
 
 <small>在上面的示例中，如果取反（negative）glob 是 `!node_modules/**/*.js`，那么各匹配项都必须与取反 glob 进行比较，这将导致执行速度极慢。如果要排除目录下的所有文件，只需要在目录名后添加`/**`即可</small>
-<!-- ads -->
 
 <span id="overlapping-globs"></span>
 ## 匹配重叠（Overlapping globs）

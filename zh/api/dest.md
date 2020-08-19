@@ -55,7 +55,7 @@ dest(directory, [options])
 
 当 `directory` 是一个返回空字符串或 `undefined` 的函数时，将发出一条错误消息 “Invalid output folder”。
 
-<!-- ads -->
+
 
 ### Options
 
@@ -104,7 +104,6 @@ src('input/**/*.js', { sourcemaps: true })
   .pipe(uglify())
   .pipe(dest('output/', { sourcemaps: '.' }));
 ```
-<!-- ads -->
 
 ## Symbolic links on Windows
 

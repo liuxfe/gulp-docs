@@ -24,7 +24,7 @@ npx --version
 ![Output: 9.7.1][img-npx-version-command]
 
 如果上述工具还没安装，请参考 [这里][node-install]。
-<!-- ads -->
+
 
 ## 安装 gulp 命令行工具
 ```sh
@@ -70,7 +70,7 @@ function defaultTask(cb) {
 
 exports.default = defaultTask
 ```
-<!-- ads -->
+
 
 ## 测试
 在项目根目录下执行 gulp 命令:

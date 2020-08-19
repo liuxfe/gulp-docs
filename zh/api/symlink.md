@@ -27,7 +27,7 @@ exports.link = link;
 ```js
 symlink(directory, [options])
 ```
-<!-- ads -->
+
 
 ### 参数(Parameters)
 

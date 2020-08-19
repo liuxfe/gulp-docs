@@ -15,7 +15,6 @@ sidebar_label: 基础概念
 
 Vinyl 是描述文件的元数据对象。Vinyl 实例的主要属性是文件系统中文件核心的 `path` 和 `contents` 核心方面。Vinyl 对象可用于描述来自多个源的文件（本地文件系统或任何远程存储选项上）。
 
-<!-- ads -->
 
 ## Vinyl 适配器
 
@@ -45,8 +44,6 @@ glob base (有时称为 glob parent)是 glob 字符串中任何特殊字符之�
 由 `src()` 生成的 Vinyl 实例是用 glob base 集作为它们的 base 属性构造的。当使用 `dest()` 写入文件系统时，将从输出路径中删除 `base` ，以保留目录结构。
 
 有关更深入的信息，请参阅 [glob-parent][glob-parent-external] 库。
-
-<!-- ads -->
 
 ## 文件系统统计数据
 

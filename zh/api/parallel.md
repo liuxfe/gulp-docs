@@ -27,7 +27,7 @@ function css(cb) {
 exports.build = parallel(javascript, css);
 ```
 
-<!-- ads -->
+
 
 ## 原型(Signature)
 
@@ -66,7 +66,6 @@ parallel(...tasks)
 当一个组合操作执行时，每个任务（task）的每次调用都将被执行。
 
 在两个不同的组合中引用的 `clean` 任务将运行两次，将导致不期望的结果。因此，建议在最终的组合中指定 `clean` 任务。
-<!-- ads -->
 
 如果你有如下代码：
 ```js

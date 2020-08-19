@@ -23,7 +23,7 @@ gulpfile 是项目目录下名为 `gulpfile.js` （或者首字母大写 `Gulpfi
 __Most new versions of node support most features that TypeScript or Babel provide, except the `import`/`export` syntax. When only that syntax is desired, rename to `gulpfile.esm.js` and install the [esm][esm-module] module.__
 
 针对此功能的高级知识和已支持的扩展名的完整列表，请参考 [gulpfile 转译][gulpfile-transpilation-advanced] 文档。
-<!-- ads -->
+
 
 ##  Gulpfile 分割
 
