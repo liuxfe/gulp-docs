@@ -31,9 +31,9 @@ watch(globs, [options], [task])
 
 | 参数 | 类型 | 说明 |
 |:--------------:|:-----:|--------|
-| globs<br>**(必须的)** | string<br>array | [Globs][globs-concepts] 用来监听文件系统 |
+| globs<br/>**(必须的)** | string<br/>array | [Globs][globs-concepts] 用来监听文件系统 |
 | options | object | [Options][options-section] 详情参见下文. |
-| task | function<br>string | 一个 [任务函数][tasks-concepts] 或由 `series()` 和 `parallel()` 生成的组合任务 |
+| task | function<br/>string | 一个 [任务函数][tasks-concepts] 或由 `series()` 和 `parallel()` 生成的组合任务 |
 
 ### 返回(Returns)
 
@@ -49,24 +49,24 @@ watch(globs, [options], [task])
 
 | 名字 | 类型 | 默认值 | 说明 |
 |:-------:|:------:|-----------|--------|
-| ignoreInitial | boolean | true | 如果值是false，则在实例化过程中调用该任务，以发现文件路径。用于在启动期间触发任务。<br>**注意:** 此选项将传递给 [chokidar][chokidar-external] 但是他的默认值是 `true` 而不是 `false`. |
+| ignoreInitial | boolean | true | 如果值是false，则在实例化过程中调用该任务，以发现文件路径。用于在启动期间触发任务。<br/>**注意:** 此选项将传递给 [chokidar][chokidar-external] 但是他的默认值是 `true` 而不是 `false`. |
 | delay | number | 200 | 文件更改和任务执行之间的毫秒延迟。允许在执行任务之前等待许多更改，例如查找和替换许多文件。 |
 | queue | boolean | true | 当为 true 且任务已经运行时，任何文件更改都将对单个任务执行进行排队。避免长时间运行的任务重叠。 |
-| events | string<br>array | [ 'add',<br>'change',<br>'unlink' ] |  正在监听的事件，以触发任务执行。可以是 `'add'`, `'addDir'`, `'change'`, `'unlink'`, `'unlinkDir'`, `'ready'`, 和(或) `'error'`.  另外 `'all'` 也是可用的，它表示除 `'ready'` 和 `'error'`之外的所有事件。<br>_此选项直接传递给 [chokidar][chokidar-external]._ |
-| persistent | boolean | true | 如果值为 `false`，监听器将不会保持 Node 进程的运行。不建议禁用此选项。<br>_此选项直接传递给 [chokidar][chokidar-external]._ |
-| ignored | array<br>string<br>RegExp<br>function |  | Defines globs to be ignored. If a function is provided, it will be called twice per path - once with just the path, then with the path and the `fs.Stats` object of that file.<br>_此选项直接传递给 [chokidar][chokidar-external]._ |
-| followSymlinks | boolean | true | 如果为 `true`，对符号链接和链接的文件的更改都将触发事件。如果为 `false`，则只有对符号链接的更改才触发事件。<br>_此选项直接传递给 [chokidar][chokidar-external]._ |
-| cwd | string |  | 将与任何相对路径相结合以形成绝对路径的目录。对于绝对路径忽略。用于避免将 `globs` 与 `path.join()` 组合使用。<br>_此选项直接传递给 [chokidar][chokidar-external]._ |
-| disableGlobbing | boolean | false | 如果为 `true`，所有 `globs` 都被视为字面路径名称，即使它们具有特殊字符。<br>_此选项直接传递给 [chokidar][chokidar-external]._ |
-| usePolling | boolean | false | 当值为 `false` 时，监听器将使用 `fs.watch()`（或 Mac 上的 [fsevents][fsevents-external]）(或`fsevents`)进行监听。如果为 `true`，则使用 `fs.watchFile()` 轮询代替——这是通过网络或其他非标准情况成功监听文件所必需的。覆盖 `useFsEvents` 默认值。<br>_此选项直接传递给 [chokidar][chokidar-external]._ |
-| interval | number | 100 | 与 `usePolling: true` 配套使用。表示文件系统轮询的间隔<br>_此选项直接传递给 [chokidar][chokidar-external]._ |
-| binaryInterval | number | 300 | 与 `usePolling: true` 配套使用。表示文件系统轮询二进制文件的间隔。<br>_此选项直接传递给 [chokidar][chokidar-external]._ |
-| useFsEvents | boolean | true | 如果为 `true` 且 `fsevents` 可用， 则使用 fsevents 进行监听。如果显式设置为 `true`，则替代 `usePolling` 选项。如果设置为 `false`，则自动将 `usePolling` 设置为 `true`。<br>_此选项直接传递给 [chokidar][chokidar-external]._ |
-| alwaysStat | boolean | false | 如果为 `true`，总是调用 `fs.stat()` 对已更改的文件——将减慢文件监听器。只有在直接使用chokidar 实例时，`fs.Stat` 的对象才可用。<br>_此选项直接传递给 [chokidar][chokidar-external]._ |
-| depth | number |  | 指示将监听多少级嵌套目录。<br>_此选项直接传递给 [chokidar][chokidar-external]._ |
-| awaitWriteFinish | boolean | false | 不要使用这个选项，而是使用 `delay`。<br>_此选项直接传递给 [chokidar][chokidar-external]._ |
-| ignorePermissionErrors | boolean | false | 设置为 true 以监听没有读取权限的文件。然而，如果由于 EPERM 或 EACCES 错误导致监听失败，则会自动跳过。<br>_此选项直接传递给 [chokidar][chokidar-external]._ |
-| atomic | number | 100 | 只有在 `useFsEvents` 和 `usePolling` 为 `false` 时才激活。自动过滤掉一些编辑器从 "atomic writes" 中产生的工件。如果文件在删除后的指定毫秒内重新添加，则会发出一个更改事件(而不是取消链接然后添加)。<br>_此选项直接传递给 [chokidar][chokidar-external]._ |
+| events | string<br/>array | [ 'add',<br/>'change',<br/>'unlink' ] |  正在监听的事件，以触发任务执行。可以是 `'add'`, `'addDir'`, `'change'`, `'unlink'`, `'unlinkDir'`, `'ready'`, 和(或) `'error'`.  另外 `'all'` 也是可用的，它表示除 `'ready'` 和 `'error'`之外的所有事件。<br/>_此选项直接传递给 [chokidar][chokidar-external]._ |
+| persistent | boolean | true | 如果值为 `false`，监听器将不会保持 Node 进程的运行。不建议禁用此选项。<br/>_此选项直接传递给 [chokidar][chokidar-external]._ |
+| ignored | array<br/>string<br/>RegExp<br/>function |  | Defines globs to be ignored. If a function is provided, it will be called twice per path - once with just the path, then with the path and the `fs.Stats` object of that file.<br/>_此选项直接传递给 [chokidar][chokidar-external]._ |
+| followSymlinks | boolean | true | 如果为 `true`，对符号链接和链接的文件的更改都将触发事件。如果为 `false`，则只有对符号链接的更改才触发事件。<br/>_此选项直接传递给 [chokidar][chokidar-external]._ |
+| cwd | string |  | 将与任何相对路径相结合以形成绝对路径的目录。对于绝对路径忽略。用于避免将 `globs` 与 `path.join()` 组合使用。<br/>_此选项直接传递给 [chokidar][chokidar-external]._ |
+| disableGlobbing | boolean | false | 如果为 `true`，所有 `globs` 都被视为字面路径名称，即使它们具有特殊字符。<br/>_此选项直接传递给 [chokidar][chokidar-external]._ |
+| usePolling | boolean | false | 当值为 `false` 时，监听器将使用 `fs.watch()`（或 Mac 上的 [fsevents][fsevents-external]）(或`fsevents`)进行监听。如果为 `true`，则使用 `fs.watchFile()` 轮询代替——这是通过网络或其他非标准情况成功监听文件所必需的。覆盖 `useFsEvents` 默认值。<br/>_此选项直接传递给 [chokidar][chokidar-external]._ |
+| interval | number | 100 | 与 `usePolling: true` 配套使用。表示文件系统轮询的间隔<br/>_此选项直接传递给 [chokidar][chokidar-external]._ |
+| binaryInterval | number | 300 | 与 `usePolling: true` 配套使用。表示文件系统轮询二进制文件的间隔。<br/>_此选项直接传递给 [chokidar][chokidar-external]._ |
+| useFsEvents | boolean | true | 如果为 `true` 且 `fsevents` 可用， 则使用 fsevents 进行监听。如果显式设置为 `true`，则替代 `usePolling` 选项。如果设置为 `false`，则自动将 `usePolling` 设置为 `true`。<br/>_此选项直接传递给 [chokidar][chokidar-external]._ |
+| alwaysStat | boolean | false | 如果为 `true`，总是调用 `fs.stat()` 对已更改的文件——将减慢文件监听器。只有在直接使用chokidar 实例时，`fs.Stat` 的对象才可用。<br/>_此选项直接传递给 [chokidar][chokidar-external]._ |
+| depth | number |  | 指示将监听多少级嵌套目录。<br/>_此选项直接传递给 [chokidar][chokidar-external]._ |
+| awaitWriteFinish | boolean | false | 不要使用这个选项，而是使用 `delay`。<br/>_此选项直接传递给 [chokidar][chokidar-external]._ |
+| ignorePermissionErrors | boolean | false | 设置为 true 以监听没有读取权限的文件。然而，如果由于 EPERM 或 EACCES 错误导致监听失败，则会自动跳过。<br/>_此选项直接传递给 [chokidar][chokidar-external]._ |
+| atomic | number | 100 | 只有在 `useFsEvents` 和 `usePolling` 为 `false` 时才激活。自动过滤掉一些编辑器从 "atomic writes" 中产生的工件。如果文件在删除后的指定毫秒内重新添加，则会发出一个更改事件(而不是取消链接然后添加)。<br/>_此选项直接传递给 [chokidar][chokidar-external]._ |
 
 
 ## Chokidar实例
@@ -120,7 +120,7 @@ watcher.close();
 
 | 参数 | 类型 | 说明 |
 |:-------------:|:-----:|--------|
-| globs | string<br>array | 额外的要监听的 globs |
+| globs | string<br/>array | 额外的要监听的 globs |
 
 
 
@@ -130,7 +130,7 @@ watcher.close();
 
 | 参数 | 类型 | 说明 |
 |:-------------:|:-----:|--------|
-| globs | string<br>array | 要删除的 globs。 |
+| globs | string<br/>array | 要删除的 globs。 |
 
 [chokidar-instance-section]: #chokidar-instance
 [options-section]: #options

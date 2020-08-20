@@ -32,7 +32,7 @@ dest(directory, [options])
 
 | parameter | type | note |
 |:--------------:|:-----:|--------|
-| directory<br>**(必须的)** | string<br>function | 将写入文件的输出目录的路径。如果使用一个函数，该函数将与每个 Vinyl 对象一起调用，并且必须返回一个字符串目录路径。|
+| directory<br/>**(必须的)** | string<br/>function | 将写入文件的输出目录的路径。如果使用一个函数，该函数将与每个 Vinyl 对象一起调用，并且必须返回一个字符串目录路径。|
 | options | object |  [选项][options-section] 下面详述 |
 
 ### 返回值(Returns)
@@ -63,14 +63,14 @@ dest(directory, [options])
 
 | 名字 | 类型 | 默认值 | 说明 |
 |:-------:|:------:|-----------|-------|
-| cwd | string<br>function | `process.cwd()` | 这个目录将与任何相对路径相结合以形成绝对路径。对于绝对路径忽略。用于避免将 `directory` 与 `path.join()` 相结合。 |
-| mode | number<br>function | `stat.mode` of the Vinyl object | 创建文件时使用的模式。如果没有设置，并且缺少 `stat.mode`，则使用 process' 模式。 |
-| dirMode | number<br>function | | 创建目录时使用的模式。如果没有设置，将使用 process' 模式。 |
-| overwrite | boolean<br>function | true | 如果为 true，则用相同的路径覆盖现有文件。 |
-| append | boolean<br>function | false | 如果为 true，则将内容添加到文件末尾，而不是替换现有内容。 |
-| sourcemaps | boolean<br>string<br>function | false | 如果为 `true`，则将内联 sourcemaps 写入输出文件。指定一个 `string` 路径将在给定路径上写入外部 [sourcemaps][sourcemaps-section] 。 |
-| relativeSymlinks | boolean<br>function | false | 当为false 时，创建的任何符号链接将是绝对的。<br>**注意:** 如果正在创建连接，则忽略它们，因为它们必须是绝对的。 |
-| useJunctions | boolean<br>function | true | 此选项仅适用于 Windows，在其他地方被忽略。当为 true 时，创建目录符号链接作为连接（junction）。 详见下文 [Symbolic links on Windows][symbolic-links-section]. |
+| cwd | string<br/>function | `process.cwd()` | 这个目录将与任何相对路径相结合以形成绝对路径。对于绝对路径忽略。用于避免将 `directory` 与 `path.join()` 相结合。 |
+| mode | number<br/>function | `stat.mode` of the Vinyl object | 创建文件时使用的模式。如果没有设置，并且缺少 `stat.mode`，则使用 process' 模式。 |
+| dirMode | number<br/>function | | 创建目录时使用的模式。如果没有设置，将使用 process' 模式。 |
+| overwrite | boolean<br/>function | true | 如果为 true，则用相同的路径覆盖现有文件。 |
+| append | boolean<br/>function | false | 如果为 true，则将内容添加到文件末尾，而不是替换现有内容。 |
+| sourcemaps | boolean<br/>string<br/>function | false | 如果为 `true`，则将内联 sourcemaps 写入输出文件。指定一个 `string` 路径将在给定路径上写入外部 [sourcemaps][sourcemaps-section] 。 |
+| relativeSymlinks | boolean<br/>function | false | 当为false 时，创建的任何符号链接将是绝对的。<br/>**注意:** 如果正在创建连接，则忽略它们，因为它们必须是绝对的。 |
+| useJunctions | boolean<br/>function | true | 此选项仅适用于 Windows，在其他地方被忽略。当为 true 时，创建目录符号链接作为连接（junction）。 详见下文 [Symbolic links on Windows][symbolic-links-section]. |
 
 ## 元数据更新(Metadata updates)
 

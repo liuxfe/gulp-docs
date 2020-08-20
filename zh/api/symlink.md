@@ -33,7 +33,7 @@ symlink(directory, [options])
 
 | 参数 | 类型 | 说明 |
 |:--------------:|:-----:|--------|
-| directory<br>**(必须的)** | string<br>function | 将在输出目录中创建符号链接。如果使用一个函数，则每个Vinyl对象将调用该函数，并且必须目录路径返回字符串。|
+| directory<br/>**(必须的)** | string<br/>function | 将在输出目录中创建符号链接。如果使用一个函数，则每个Vinyl对象将调用该函数，并且必须目录路径返回字符串。|
 | options | object | 详见下面 [选项][options-section] 一节. |
 
 ### 返回值(Returns)
@@ -65,11 +65,11 @@ When `directory` is a function that returns an empty string or `undefined`, emit
 
 | name | type | default | note |
 |:-------:|:------:|-----------|-------|
-| cwd | string<br>function | `process.cwd()` |The directory that will be combined with any relative path to form an absolute path. Is ignored for absolute paths. Use to avoid combining `directory` with `path.join()`. |
-| dirMode | number<br>function | | The mode used when creating directories. If not set, the process' mode will be used. |
-| overwrite | boolean<br>function | true | When true, overwrites existing files with the same path. |
-| relativeSymlinks | boolean<br>function | false | When false, any symbolic links created will be absolute.<br>**Note**: Ignored if a junction is being created, as they must be absolute. |
-| useJunctions | boolean<br>function | true | This option is only relevant on Windows and ignored elsewhere. When true, creates directory symbolic link as a junction. Detailed in [Symbolic links on Windows][symbolic-links-section] below. |
+| cwd | string<br/>function | `process.cwd()` |The directory that will be combined with any relative path to form an absolute path. Is ignored for absolute paths. Use to avoid combining `directory` with `path.join()`. |
+| dirMode | number<br/>function | | The mode used when creating directories. If not set, the process' mode will be used. |
+| overwrite | boolean<br/>function | true | When true, overwrites existing files with the same path. |
+| relativeSymlinks | boolean<br/>function | false | When false, any symbolic links created will be absolute.<br/>**Note**: Ignored if a junction is being created, as they must be absolute. |
+| useJunctions | boolean<br/>function | true | This option is only relevant on Windows and ignored elsewhere. When true, creates directory symbolic link as a junction. Detailed in [Symbolic links on Windows][symbolic-links-section] below. |
 
 ## Symbolic links on Windows
 

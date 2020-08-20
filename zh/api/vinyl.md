@@ -75,7 +75,7 @@ When any passed options don't conform to the [instance property definitions][ins
 | path | string | | 完整的绝对文件路径。被[规范化][normalization-and-concatenation-section]，并删除尾随分隔符。 |
 | history | array | `[ ]` | 预先填充 Vinyl 实例的 `history` 的路径数组。通常来自于从以前的 Vinyl 对象派生出一个新的 Vinyl 对象。如果 `path` 和 `history` 都被传递，`path` 将被附加到 `history` 中。每一项都被[规范化][normalization-and-concatenation-section]，并删除尾随分隔符。 |
 | stat | object | | 一个 `fs.Stats` 实例，通常是对文件调用 `fs.stat()` 的结果。用于确定 Vinyl 对象是否表示目录或符号链接。 |
-| contents | ReadableStream<br>Buffer<br>`null` | `null` | 文件的内容。如果 `contents` 是一个 ReadableStream，它将被包装在一个 [可克隆可读的][cloneable-readable-external] 流中。|
+| contents | ReadableStream<br/>Buffer<br/>`null` | `null` | 文件的内容。如果 `contents` 是一个 ReadableStream，它将被包装在一个 [可克隆可读的][cloneable-readable-external] 流中。|
 
 `options` 上的任何其他属性都将直接分配给 Vinyl 实例。
 
@@ -98,7 +98,7 @@ file.foo === 'bar';
 
 | 属性 | 类型 | 描述 | 抛出异常 |
 |:-----------:|:------:|----------------|----------|
-| contents | ReadableStream<br>Buffer<br>`null` | 获取和设置虚拟文件的内容。如果将其设置为 ReadableStream，它将被包装在一个 [可克隆可读的][cloneable-readable-external] 流中。 |如果设置为 ReadableStream， Buffer，或者 `null` 之外的任何值 |
+| contents | ReadableStream<br/>Buffer<br/>`null` | 获取和设置虚拟文件的内容。如果将其设置为 ReadableStream，它将被包装在一个 [可克隆可读的][cloneable-readable-external] 流中。 |如果设置为 ReadableStream， Buffer，或者 `null` 之外的任何值 |
 | stat | object | 获取或设置 [`fs.Stats`][fs-stats-concepts] 的实例。当确定 Vinyl 对象是否表示目录或符号链接时使用。 | |
 | cwd | string |获取并设置当前工作目录。用于推导相对路径。 | 如果设置为空字符串或任何非字符串值。 |
 | base | string | 获取和设置基目录。用于计算 `relative` 实例属性。 在由 `src()` 生成的 Vinyl 对象上，将设置为 [glob base][global-base-concepts]。如果设置为 `null` 或 `undefined`，则会退到 `cwd` 实例属性的值。 | 如果设置为空字符串或任何非字符串值(`null` 或 `undefined` 除外)。 |
